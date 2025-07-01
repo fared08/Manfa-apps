@@ -50,7 +50,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       body: Center(
         child: FadeTransition(
           opacity: _animation,
-          child: Image.asset('assets/logo.png', width: 200), // Ganti dengan logomu
+          child: Image.asset('assets/images/Syria.png', width: 200), // Ganti dengan logomu
         ),
       ),
     );
