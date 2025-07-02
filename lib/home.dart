@@ -73,9 +73,11 @@ class Home extends StatelessWidget {
 
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/images/fbg-sy.png"),
+                  image: AssetImage('assets/images/syria2.png'),
                   fit: BoxFit.cover,
+                  alignment: Alignment.center,
                 ),
+
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column(

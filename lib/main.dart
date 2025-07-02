@@ -6,7 +6,7 @@ import 'dart:async';
 import 'package:manfa_apps/splashscreen.dart';
 
 void main() {
- runApp(ManfaApps());
+  runApp(ManfaApps());
 }
 
 class ManfaApps extends StatelessWidget {
