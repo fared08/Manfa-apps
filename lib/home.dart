@@ -81,11 +81,18 @@ class Home extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  const Text("Dzuhur", style: TextStyle(color: Colors.white)),
                   const Text(
-                    "	٢	٢.١١",
+                    "الظّهْر",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                  const Text(
+                    "		١١.٢٥",
                     style: TextStyle(
                       fontSize: 32,
                       color: Colors.white,
@@ -97,8 +104,12 @@ class Home extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
                       Text(
-                        "1 jam 25 menit lagi Dzuhur",
-                        style: TextStyle(color: Colors.white70),
+                        "ساعة و ٢٥ دقيقة حتى صلاة الظهر",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                       Row(
                         children: [
@@ -124,7 +135,14 @@ class Home extends StatelessWidget {
                   ElevatedButton.icon(
                     onPressed: () {},
                     icon: const Icon(Icons.my_location),
-                    label: const Text("Update Lokasi"),
+                    label: Text(
+                      "تحديث الموقع",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0x06923E),
                       foregroundColor: Colors.white,
