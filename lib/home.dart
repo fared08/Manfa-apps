@@ -160,15 +160,17 @@ class Home extends StatelessWidget {
             // 🧭 Menu horizontal
             SizedBox(
               height: 90,
-              child: ListView(
+              child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  menuItem("سوق "),
-                  menuItem("منتجات محلية"),
-                  menuItem("الملابس الإسلامية"),
-                  menuItem("العطور الشرقية"),
-                  menuItem("كتب وأدوات"),
-                ],
+                child: Row(
+                  children: [
+                    menuButton("سوق", Icons.store, () {}),
+                    menuButton("منتجات محلية", Icons.local_mall, () {}),
+                    menuButton("الملابس الإسلامية", Icons.checkroom, () {}),
+                    menuButton("العطور الشرقية", Icons.spa, () {}),
+                    menuButton("كتب وأدوات", Icons.menu_book, () {}),
+                  ],
+                ),
               ),
             ),
 
@@ -213,15 +215,46 @@ class Home extends StatelessWidget {
     );
   }
 
-  Widget menuItem(String label) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 16),
-      child: Column(
-        children: [
-          CircleAvatar(backgroundColor: Colors.grey[300], radius: 28),
-          const SizedBox(height: 4),
-          Text(label, style: const TextStyle(fontSize: 12)),
-        ],
+  // Widget menuItem(String label) {
+  //   return Padding(
+  //     padding: const EdgeInsets.only(right: 16),
+  //     child: Column(
+  //       children: [
+  //         CircleAvatar(backgroundColor: Colors.grey[300], radius: 28),
+  //         const SizedBox(height: 4),
+  //         Text(label, style: const TextStyle(fontSize: 12)),
+  //       ],
+  //     ),
+  //   );
+  // }
+
+  Widget menuButton(String label, IconData icon, VoidCallback onTap) {
+    return Container(
+      width: 90, // Lebar tombol
+      height: 90, // Tinggi tombol
+      margin: const EdgeInsets.symmetric(horizontal: 6),
+      child: TextButton(
+        onPressed: onTap,
+        style: TextButton.styleFrom(
+          backgroundColor: const Color(0xFF5EABD6),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          padding: const EdgeInsets.all(8),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 28, color: Colors.white),
+            const SizedBox(height: 8),
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              textDirection: TextDirection.rtl,
+              style: const TextStyle(fontSize: 12, color: Colors.white),
+            ),
+          ],
+        ),
       ),
     );
   }
