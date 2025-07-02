@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Colors.black,
-        
+
         unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
@@ -25,29 +25,27 @@ class Home extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Akun'),
         ],
       ),
-      body: 
-      
-      SafeArea(
-
+      body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
             // 🔍 Search bar & icons
             ClipRRect(
               child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
+                filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 12,
+                  ),
                   decoration: BoxDecoration(
                     color: Color(0x5EABD6).withOpacity(0.9),
-                    
+
                     borderRadius: BorderRadius.circular(24),
-                    border: Border.all(color: Colors.white.withOpacity(0.3))
+                    border: Border.all(color: Colors.white.withOpacity(0.3)),
                   ),
                   child: Row(
                     children: [
-                
-                      
                       const Icon(Icons.search, color: Colors.white),
                       const SizedBox(width: 12),
                       const Expanded(
@@ -72,8 +70,12 @@ class Home extends StatelessWidget {
             // 🕌 Waktu Salat card
             Container(
               padding: const EdgeInsets.all(16),
+
               decoration: BoxDecoration(
-                color: Color(0x57B4BA).withOpacity(1),
+                image: DecorationImage(
+                  image: AssetImage("assets/images/fbg-sy.png"),
+                  fit: BoxFit.cover,
+                ),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column(
@@ -82,7 +84,11 @@ class Home extends StatelessWidget {
                   const Text("Dzuhur", style: TextStyle(color: Colors.white)),
                   const Text(
                     "	٢	٢.١١",
-                    style: TextStyle(fontSize: 32, color: Colors.white),
+                    style: TextStyle(
+                      fontSize: 32,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
                   const SizedBox(height: 4),
                   Row(
@@ -101,8 +107,12 @@ class Home extends StatelessWidget {
                           ),
                           SizedBox(width: 4),
                           Text(
-                            "Depok, Jawa Barat",
-                            style: TextStyle(color: Colors.white),
+                            "دمشق، سوريا",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w900,
+                            ),
                           ),
                         ],
                       ),
@@ -114,7 +124,7 @@ class Home extends StatelessWidget {
                     icon: const Icon(Icons.my_location),
                     label: const Text("Update Lokasi"),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.grey[800],
+                      backgroundColor: Color(0x06923E),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
@@ -133,11 +143,11 @@ class Home extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  menuItem("Ibadah"),
-                  menuItem("Berbagi.link"),
-                  menuItem("Jualanku"),
-                  menuItem("Amademy"),
-                  menuItem("Bisatopup"),
+                  menuItem("سوق "),
+                  menuItem("منتجات محلية"),
+                  menuItem("الملابس الإسلامية"),
+                  menuItem("العطور الشرقية"),
+                  menuItem("كتب وأدوات"),
                 ],
               ),
             ),
@@ -163,7 +173,7 @@ class Home extends StatelessWidget {
               children: const [
                 Text(
                   "Artikel",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),
                 ),
                 Text("Lihat Semua"),
               ],
@@ -177,7 +187,6 @@ class Home extends StatelessWidget {
             artikelCard(),
             artikelCard(),
             artikelCard(),
-
           ],
         ),
       ),
