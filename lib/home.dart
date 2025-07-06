@@ -180,7 +180,7 @@ class Home extends StatelessWidget {
             Container(
               height: 120,
               decoration: BoxDecoration(
-                color: Colors.grey[300],
+                color: Color(0xFF5EABD6).withOpacity(0.9),
                 borderRadius: BorderRadius.circular(16),
               ),
             ),
@@ -189,7 +189,6 @@ class Home extends StatelessWidget {
 
             const SizedBox(height: 16),
 
-            // 📰 Artikel
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
@@ -250,6 +249,7 @@ class Home extends StatelessWidget {
             Text(
               label,
               textAlign: TextAlign.center,
+
               textDirection: TextDirection.rtl,
               style: const TextStyle(fontSize: 12, color: Colors.white),
             ),
@@ -261,9 +261,18 @@ class Home extends StatelessWidget {
 
   Widget artikelCard() {
     return Card(
+      color: Color(0x5EABD6).withOpacity(0.9),
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: ListTile(
-        leading: Container(width: 48, height: 48, color: Colors.grey[300]),
+        leading: Container(
+          width: 48,
+          height: 48,
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.6),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          // color: Color(0x06923E).withOpacity(0.9),
+        ),
         title: const Text("Lorem ipsum dolor sit amet"),
         subtitle: const Text("09.00, 28 Sep 2022"),
       ),
